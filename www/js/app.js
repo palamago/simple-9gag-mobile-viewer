@@ -53,24 +53,28 @@ var App;
     };
 
     App.renderImages = function( e, data ) {
-
-        $( "#image-container" ).html("");
+        $('#next-page-btn').show();
 
         $.tmpl( $("#image-template"), data ).appendTo( "#image-container" );
 
     };
 
     App.nextPage = function() {
-
         if(nav.nextImage()){
-            $('#images img, #images p').addClass("images-hidden");
+            $('#images img, #images h2').addClass("images-hidden");
             $("#img-"+nav.currentImage).removeClass("images-hidden");
             $("#p-"+nav.currentImage).removeClass("images-hidden");
         }else{
+            $( "#image-container" ).html("");
+            $('#next-page-btn').hide();
             nav.nextPage();
-            cli.getPage(nav.currentPage+1);
+            cli.getPage(nav.currentPage);
         }
 
+    };
+
+    App.closeApp = function(){
+        navigator.app.exitApp();
     };
 
 

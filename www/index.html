@@ -22,7 +22,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.1.min.css" />
         <link rel="stylesheet" href="css/style.css" />
         <title>Simple 9gag viewer</title>
     </head>
@@ -33,35 +33,25 @@
                 <h1>Simple 9gag viewer</h1>
             </div><!-- /header -->
 
-            <div data-role="content">   
-                <a href="pages/images.html?page=1">Go!</a>
-                <a href="pages/help.html">Help</a>
-                <a href="http://twitter.com/palamago">by @palamago</a>
+            <div data-role="content">
+                <div data-role="controlgroup">   
+                    <a href="pages/images.html?page=1" data-role="button">Go!</a>
+                    <a href="pages/help.html" data-role="button">Help</a>
+                </div>
+                <img src="img/logo.png" width="100%">    
             </div><!-- /content -->
-            
-        </div><!-- /page -->
 
-        <div id="help" data-role="page">
-
-            <div data-role="header">
-                <h1>Simple 9gag viewer</h1>
-            </div><!-- /header -->
-
-            <div data-role="content">   
-                <a href="landing">back</a>
-                <a href="http://twitter.com/palamago">by @palamago</a>
-            </div><!-- /content -->
-            
             <div data-role="footer">
+                <a href="http://twitter.com/palamago" target="_blank" data-role="button">by @palamago</a>
             </div><!-- /footer -->
             
         </div><!-- /page -->
 
         <script type="text/javascript" src="phonegap.js"></script>
 
-        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
-        <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+        <script src="js/lib/jquery-1.8.3.min.js"></script>
+        <script src="js/lib/jquery.mobile-1.2.1.min.js"></script>
+        <script src="js/lib/jquery.tmpl.js"></script>
 
         <script type="text/javascript" src="js/navigate.js"></script>
         <script type="text/javascript" src="js/client.js"></script>

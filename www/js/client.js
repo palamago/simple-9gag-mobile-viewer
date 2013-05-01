@@ -11,6 +11,8 @@ var Client;
 	Client.currentOptions = {};
 
 	Client.getPage = function( p ){
+		$( "#loading" ).show();
+
 		nav.currentPage = parseInt(p);
 
 		Client.getImagesFromSW();
@@ -19,7 +21,7 @@ var Client;
 
 	Client.getImagesFromSW = function(){
 		var offset = nav.currentPage +"0",
-			q = "select image, image_height, image_width, title from swdata LIMIT 10 OFFSET " + offset,
+			q = "select image, image_height, image_width, title from swdata where nsfw=0 order by url LIMIT 10 OFFSET " + offset,
 			repo = "9gagcom_-_hot_content",
 			url = "https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name="+repo+"&query="+q+"&callback=?";
 
@@ -32,6 +34,7 @@ var Client;
 	};
 
 	Client.getImagesFromSWCallback = function(data){
+		$( "#loading" ).hide();
 		$(this).trigger('newImagesLoaded', [Client.prepareData(data)]);
 	};
 
