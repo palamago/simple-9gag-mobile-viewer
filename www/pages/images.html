@@ -1,0 +1,15 @@
+<div id="images" data-role="page">
+
+	<a id="next-page-btn" data-role="button" onclick="App.nextPage(); return false">Next Page</a>
+
+	<div id="image-container">
+		no hay imgs
+	</div>
+
+
+	<script id="image-template" type="text/html">
+	    <p id="p-${id}" class="${custom_class}">${title}</p>
+	    <img id="img-${id}" src="${image}" class="${custom_class}" width="100%" />
+	</script>
+
+</div><!-- /page -->
